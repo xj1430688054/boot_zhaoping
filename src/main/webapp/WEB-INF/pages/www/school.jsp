@@ -10,7 +10,7 @@
 <html>
 	<head>
 		<meta charset="utf-8" />
-		<title>华仁通电力科技有限公司招聘筛选</title>	
+		<title>招聘精选</title>	
 	    <link rel="stylesheet" href="${contextPath}/static/css/www/position.css" />
 	    <link rel="stylesheet" href="${contextPath}/static/css/www/footer.css" />
 		<link rel="stylesheet" href="${contextPath}/static/css/bootstrap.css">
@@ -45,7 +45,7 @@
 								<li><a href="/position">社会招聘</a></li>
 							</ul>
 						</li>
-						<li><a href="/question">问答管理</a></li>
+						<!-- <li><a href="/question">问答管理</a></li> -->
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">个人中心<span class="caret"></span></a>
 							<ul class="dropdown-menu">
@@ -83,7 +83,7 @@
         	<div class = "title">
         		<span>校园招聘</span>
         	</div>
-            <div class="shaixuan">
+          <!--   <div class="shaixuan">
             	<span class="a">筛选条件:</span>
 				<div id="tags">
 
@@ -97,29 +97,29 @@
             		<li class="B"><a href="javascript:void(0)">研究生;</a></li>
             		<li class="B"><a href="javascript:void(0)">博士生;</a></li>
             	</ul>
-            </div>
+            </div> -->
            <!--工作地点-->
-            <div class="shaixuan">
+            <!-- <div class="shaixuan">
             	<span class="a">工作地点：</span>
 				<ul class="work">
 					<li class="B"><a href="javascript:void(0)">太原</a></li>
 					<li class="B"><a href="javascript:void(0)">上海</a></li>
 					<li class="B"><a href="javascript:void(0)">杭州</a></li>
 				</ul>
-            </div>
+            </div> -->
             
             <!--职位类别-->
-            <div class="shaixuan">
+          <!--   <div class="shaixuan">
             	<span class="a">职位类别：</span>
-				<ul class="work" id="positionType">
+				<ul class="work" id="positionType"> -->
 <%--					<li  class="B"><a href="javascript:void(0)">技术.</a></li>--%>
 <%--					<li  class="B"><a href="javascript:void(0)">管理.</a></li>--%>
 <%--					<li  class="B"><a href="javascript:void(0)">服务.</a></li>--%>
 <%--					<li  class="B"><a href="javascript:void(0)">财务.</a></li>--%>
 <%--					<li  class="B"><a href="javascript:void(0)">人力资源.</a></li>--%>
 <%--					<li  class="B"><a href="javascript:void(0)">销售.</a></li>--%>
-				</ul>
-            </div>
+<!-- 				</ul>
+            </div> -->
             
             <!--关键字搜索-->
             <div class="search">
@@ -141,7 +141,7 @@
         		<li>职位描述</li>
         		<li>工作地点</li>
         		<li>类别</li>
-        		<li>部门名称</li>
+        		<li>公司名称</li>
         	</ul>
 			<ul id="ulPosition">
 				<c:forEach items="${positions.list}" var="p" step="1">
@@ -175,7 +175,7 @@
 
 
 			<div id="desc">
-				<p>© 2019 华仁通电力科技有限公司. All Rights Reserved. </p>
+				<p> </p>
 			</div>
        </footer>
 		<script src="${contextPath}/static/js/www/school.js"></script>

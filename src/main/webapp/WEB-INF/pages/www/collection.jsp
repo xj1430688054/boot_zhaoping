@@ -9,7 +9,7 @@
 <!DOCTYPE html>
 	<head>
 		<meta charset="utf-8" />
-		<title>华仁通电力科技有限公司招聘筛选</title>	    
+		<title>招聘精选</title>	    
 		<link rel="stylesheet" href="${contextPath}/static/css/www/shoucan.css" />
 	    <link rel="stylesheet" href="${contextPath}/static/css/www/footer.css" />
 		<link rel="stylesheet" href="${contextPath}/static/css/bootstrap.css">
@@ -42,7 +42,7 @@
 							<li><a href="/position">社会招聘</a></li>
 						</ul>
 					</li>
-					<li><a href="/question">问答管理</a></li>
+					<!-- <li><a href="/question">问答管理</a></li> -->
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">个人中心<span class="caret"></span></a>
 						<ul class="dropdown-menu">
@@ -81,7 +81,7 @@
         		<li>职位描述</li>
         		<li>工作地点</li>
         		<li>类别</li>
-        		<li>部门名称</li>
+        		<li>公司名称</li>
         		<li>操作</li>
         	</ul>
         	<ul id="ulPosition">
@@ -117,7 +117,7 @@
 
 
 		   <div id="desc">
-			   <p>© 2019 华仁通电力科技有限公司. All Rights Reserved. </p>
+			   <p></p>
 		   </div>
        </footer>
 	<script src="${contextPath}/static/js/www/collection.js"></script>

@@ -202,7 +202,7 @@ CREATE TABLE IF NOT EXISTS `positions` (
   `p_responsibility` text DEFAULT NULL COMMENT '职责',
   `p_request` text DEFAULT NULL COMMENT '要求',
   `p_workSite` varchar(50) DEFAULT NULL COMMENT '工作地点',
-  `p_department` varchar(20) DEFAULT NULL COMMENT '部门',
+  `p_department` varchar(20) DEFAULT NULL COMMENT '公司',
   `p_flag` int(11) DEFAULT NULL COMMENT '标志1表示社会招聘，2表示校园招聘',
   `create_time` datetime DEFAULT current_timestamp() COMMENT '创建时间',
   `update_time` datetime DEFAULT current_timestamp() COMMENT '更新时间',

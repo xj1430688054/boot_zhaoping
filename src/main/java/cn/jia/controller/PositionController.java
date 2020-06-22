@@ -117,7 +117,7 @@ public class PositionController {
 
     /*----------------------------职位管理-------------------------------------*/
 
-    @RequiresRoles("admin")
+    @RequiresRoles("system")
     @GetMapping("/manager")
     public String show(Model model){
         ServerResponse serverResponse = positionService.findAll(1,5);
@@ -125,7 +125,7 @@ public class PositionController {
         return "manage/position";
     }
 
-    @RequiresRoles("admin")
+    @RequiresRoles("system")
     @GetMapping("/manager/findByPage")
     @ResponseBody
     public ServerResponse findByPage(@RequestParam(value = "condition",required = false)String condition,
@@ -141,7 +141,7 @@ public class PositionController {
     }
 
     //管理员的权限
-    @RequiresRoles("admin")
+    @RequiresRoles("system")
     @PostMapping("/admin/add")
     @ResponseBody
     public ServerResponse add(Positions positions,HttpSession session){
@@ -154,7 +154,7 @@ public class PositionController {
 
     @GetMapping("/admin/getById/{id}")
     @ResponseBody
-    @RequiresRoles("admin")
+    @RequiresRoles("system")
     public ServerResponse findById(@PathVariable int id,HttpSession session){
         String username =(String) session.getAttribute("username");
         if (StringUtils.isEmpty(username)){
@@ -165,7 +165,7 @@ public class PositionController {
     //更新
     @PostMapping("/admin/update")
     @ResponseBody
-    @RequiresRoles("admin")
+    @RequiresRoles("system")
     public ServerResponse update(Positions positions,HttpSession session){
         String username =(String) session.getAttribute("username");
         if (StringUtils.isEmpty(username)){
@@ -174,7 +174,7 @@ public class PositionController {
         return positionService.update(positions);
     }
     //删除
-    @RequiresRoles("admin")
+    @RequiresRoles("system")
     @DeleteMapping("/admin/delete/{id}")
     @ResponseBody
     public ServerResponse delete(@PathVariable int id,HttpSession session){

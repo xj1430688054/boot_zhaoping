@@ -5,7 +5,8 @@ package cn.jia.common;
  */
 public enum  RoleType {
     user(1,"user"),
-    admin(2,"admin");
+    admin(2,"admin"),
+	system(3,"system");
 
     private int id;
     private String msg;

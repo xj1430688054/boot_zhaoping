@@ -57,13 +57,16 @@
                                     <a href="/admin//position"><i class="icon-chevron-right sidebar-nav-indicator sidebar-nav-mini-hide"></i><i class="icon-gift sidebar-nav-icon"></i><span class="sidebar-nav-mini-hide">职位管理</span></a>
 
                                 </li>
-                                <li>
-                                    <a href="/admin/user" ><i class="icon-chevron-right sidebar-nav-indicator sidebar-nav-mini-hide"></i><i class="icon-gift sidebar-nav-icon"></i><span class="sidebar-nav-mini-hide">用户管理</span></a>
-
-                                </li>
+                                <shiro:authenticated>
+	                                <shiro:hasRole name="admin">
+										<li>
+											<a href="/admin/user" ><i class="icon-chevron-right sidebar-nav-indicator sidebar-nav-mini-hide"></i><i class="icon-gift sidebar-nav-icon"></i><span class="sidebar-nav-mini-hide">用户管理</span></a>
+										</li>
+									</shiro:hasRole>
+								</shiro:authenticated>
                                 <li>
                                     <a href="/admin/department" ><i
-                                            class="icon-chevron-right sidebar-nav-indicator sidebar-nav-mini-hide"></i><i class="icon-gift sidebar-nav-icon"></i><span class="sidebar-nav-mini-hide">部门管理</span></a>
+                                            class="icon-chevron-right sidebar-nav-indicator sidebar-nav-mini-hide"></i><i class="icon-gift sidebar-nav-icon"></i><span class="sidebar-nav-mini-hide">公司管理</span></a>
 
                                 </li>
                                 <li>

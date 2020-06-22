@@ -39,7 +39,12 @@ public class AuthRealm extends AuthorizingRealm {
         if (roles == null){
             return null;
         }
-        roleList.add(roles.getRoleName());
+        if(roles.getRoleId()==2){
+        	roleList.add(roles.getRoleName());
+        	roleList.add("system");
+        }else {
+        	roleList.add(roles.getRoleName());
+        }
         SimpleAuthorizationInfo info = new SimpleAuthorizationInfo();
         info.addRoles(roleList);
         return info;

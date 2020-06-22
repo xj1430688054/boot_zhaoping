@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Implementation-Title: boot_zhaopin
 Implementation-Version: 0.0.1-SNAPSHOT
-Built-By: admin
+Built-By: xujian
 Implementation-Vendor-Id: cn.jia
 Build-Jdk: 1.8.0_192
 Implementation-URL: http://projects.spring.io/spring-boot/boot_zhaopin

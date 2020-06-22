@@ -52,11 +52,11 @@ public class MainController {
     public String loginCheck(String username, String password, HttpSession session, Model model,String verifyInput){
 
         //检验验证码
-//        String originalVerify = (String)session.getAttribute(RandomValidateCodeUtil.RANDOMCODEKEY);
-//        if(!StringUtils.equals(originalVerify,verifyInput)){
-//            model.addAttribute("verifyCode","false");
-//            return "login";
-//        }
+        String originalVerify = (String)session.getAttribute(RandomValidateCodeUtil.RANDOMCODEKEY);
+        if(!StringUtils.equals(originalVerify,verifyInput)){
+            model.addAttribute("verifyCode","false");
+            return "login";
+        }
 
         UsernamePasswordToken usernamePasswordToken = new UsernamePasswordToken(username,password);
         usernamePasswordToken.setRememberMe(true);

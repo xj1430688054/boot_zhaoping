@@ -21,7 +21,7 @@ public class UserController {
     private UserService userService;
 
     /*-------------------管理员------------------------*/
-    @RequiresRoles("admin")
+    @RequiresRoles("system")
     @GetMapping("/admin/show")
     public String show(Model model){
         ServerResponse serverResponse = userService.queryUserByName(null,1,8);
@@ -29,14 +29,14 @@ public class UserController {
         return "manage/user";
     }
 
-    @RequiresRoles("admin")
+    @RequiresRoles("system")
     @PostMapping("/admin/add")
     @ResponseBody
     public ServerResponse addUser(User user){
         return userService.addUser(user);
     }
 
-    @RequiresRoles("admin")
+    @RequiresRoles("system")
     @PostMapping("/admin/query")
     @ResponseBody
     public ServerResponse query(String name,
@@ -45,14 +45,14 @@ public class UserController {
         return userService.queryUserByName(name,pageIndex,pageSize);
     }
 
-    @RequiresRoles("admin")
+    @RequiresRoles("system")
     @PostMapping("/admin/changeRole")
     @ResponseBody
     public ServerResponse changeRole(String name,int roleId){
         return userService.changeRole(name,roleId);
     }
 
-    @RequiresRoles("admin")
+    @RequiresRoles("system")
     @DeleteMapping("/admin/delete/{id}")
     @ResponseBody
     public ServerResponse deleteByName(@PathVariable int id){

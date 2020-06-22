@@ -56,12 +56,16 @@
 									<a href="/admin//position"><i class="icon-chevron-right sidebar-nav-indicator sidebar-nav-mini-hide"></i><i class="icon-gift sidebar-nav-icon"></i><span class="sidebar-nav-mini-hide">职位管理</span></a>
 
 								</li>
-								<li>
-									<a href="/admin/user" ><i class="icon-chevron-right sidebar-nav-indicator sidebar-nav-mini-hide"></i><i class="icon-gift sidebar-nav-icon"></i><span class="sidebar-nav-mini-hide">用户管理</span></a>
-								</li>
+								<shiro:authenticated>
+	                                <shiro:hasRole name="admin">
+										<li>
+											<a href="/admin/user" ><i class="icon-chevron-right sidebar-nav-indicator sidebar-nav-mini-hide"></i><i class="icon-gift sidebar-nav-icon"></i><span class="sidebar-nav-mini-hide">用户管理</span></a>
+										</li>
+									</shiro:hasRole>
+								</shiro:authenticated>
 								<li>
 									<a href="/admin/department" ><i
-											class="icon-chevron-right sidebar-nav-indicator sidebar-nav-mini-hide"></i><i class="icon-gift sidebar-nav-icon"></i><span class="sidebar-nav-mini-hide">部门管理</span></a>
+											class="icon-chevron-right sidebar-nav-indicator sidebar-nav-mini-hide"></i><i class="icon-gift sidebar-nav-icon"></i><span class="sidebar-nav-mini-hide">公司管理</span></a>
 
 								</li>
 								<li>
@@ -135,7 +139,7 @@
 							<ul>
 								<li>ID</li>
 								<li>分类</li>
-								<li>部门</li>
+								<li>公司</li>
 								<li>职位</li>
 								<li style="width: 213px;">类型</li>
 								<li style="width: 193px;">操作</li>
@@ -195,7 +199,7 @@
 					    </select>
 					  </div>
 					<div class="form-group">
-						<label for="exampleInputFile">部门：</label>
+						<label for="exampleInputFile">公司：</label>
 						<select class="form-group" id="addDepartment">
 							<option>技术部</option>
 							<option>销售部</option>
@@ -262,7 +266,7 @@
 					    </select>
 					  </div>
 					<div class="form-group">
-						<label for="exampleInputFile">部门：</label>
+						<label for="exampleInputFile">公司：</label>
 						<select class="form-group" id="updateDepartment">
 <%--							<option>技术部</option>--%>
 <%--							<option>销售部</option>--%>

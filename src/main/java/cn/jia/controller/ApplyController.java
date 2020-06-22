@@ -39,14 +39,14 @@ public class ApplyController {
     }
 
 
-    @RequiresRoles("admin")
+    @RequiresRoles("system")
     @GetMapping("/manager")
     public String show(Model model) {
         model.addAttribute("apply", positionService.findAllApply(1,5,null,null).getData());
         return "manage/apply";
     }
 
-    @RequiresRoles("admin")
+    @RequiresRoles("system")
     @GetMapping("/manager/findByPage")
     @ResponseBody
     public ServerResponse findByPage(
@@ -57,7 +57,7 @@ public class ApplyController {
         return positionService.findAllApply(pageIndex,pageSize,null,condition);
     }
 
-    @RequiresRoles("admin")
+    @RequiresRoles("system")
     @PutMapping("/update/state/{applyId}")
     @ResponseBody
     public ServerResponse applyUpdate(@PathVariable int applyId,@RequestParam("state") Integer state, HttpSession session){

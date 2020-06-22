@@ -33,7 +33,7 @@ public class QuestTypeController {
     private QuestTypeService questTypeService;
 
 	// 展现简历
-	@RequiresRoles("admin")
+	@RequiresRoles("system")
 	@PostMapping("/add")
     @ResponseBody
 	public ServerResponse add(QuestTypeDTO dto) {
@@ -47,7 +47,7 @@ public class QuestTypeController {
 	}
 
 	// 展现题库
-	@RequiresRoles("admin")
+	@RequiresRoles("system")
 	@DeleteMapping("/delete/{id}")
     @ResponseBody
 	public ServerResponse delete(@PathVariable("id") String id,HttpSession session) {
@@ -63,7 +63,7 @@ public class QuestTypeController {
 		return ServerResponse.buildSuccessMsg("删除成功！");
 	}
 
-	@RequiresRoles("admin")
+	@RequiresRoles("system")
     @ResponseBody
 	@PostMapping("/update")
 	public ServerResponse update(QuestTypeDTO dto) {
@@ -77,7 +77,7 @@ public class QuestTypeController {
 
     @GetMapping("/getById/{id}")
     @ResponseBody
-    @RequiresRoles("admin")
+    @RequiresRoles("system")
     public ServerResponse findById(@PathVariable String id, HttpSession session){
         String username =(String) session.getAttribute("username");
         if (StringUtils.isEmpty(username)){
@@ -86,7 +86,7 @@ public class QuestTypeController {
         return ServerResponse.buildSuccessData(questTypeMapper.selectByPrimaryKey(id));
     }
 
-    @RequiresRoles("admin")
+    @RequiresRoles("system")
     @GetMapping("/manager")
     public String show(Model model) {
         model.addAttribute("questType", questTypeService.selectBySearch("", 1, 5));

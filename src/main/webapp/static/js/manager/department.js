@@ -80,7 +80,7 @@ $(function () {
         });
     })
 
-    //部门搜索，根据部门名称搜索
+    //公司搜索，根据公司名称搜索
    $(document).on('click','.positionQuery',function () {
        var  pName = $('#exampleInputName2').val();
        $.ajax({
@@ -122,7 +122,7 @@ $(function () {
    $(document).on('click','.deleteBtn',function () {
        var id = $(this).parent('span').prev().text();
        swal({
-           title: '确定删除此部门么?',
+           title: '确定删除此公司么?',
            type: 'info',
            showCancelButton: true,
            confirmButtonText: '确定!',

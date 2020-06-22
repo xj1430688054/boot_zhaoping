@@ -30,13 +30,21 @@ $(function () {
                                 if (user.list[i].roleId == 1) {
                                     select = "<select name=\"role\">\n" +
                                         "  <option value=\"1\" selected='selected'>普通用户</option>\n" +
-                                        " <option value=\"2\">管理员</option>\n" +
+                                        " <option value=\"2\" >管理员</option>\n" +
+                                        " <option value=\"3\" >公司用户</option>\n" +
                                         " </select>\n";
-                                } else {
+                                } else if(user.list[i].roleId == 2) {
                                     select = "<select name=\"role\">\n" +
                                         "  <option value=\"1\" >普通用户</option>\n" +
                                         " <option value=\"2\" selected='selected'>管理员</option>\n" +
+                                        " <option value=\"3\" >公司用户</option>\n" +
                                         " </select>\n";
+                                } else {
+                                    select = "<select name=\"role\">\n" +
+                                    "  <option value=\"1\" >普通用户</option>\n" +
+                                    " <option value=\"2\" >管理员</option>\n" +
+                                    " <option value=\"3\" selected='selected'>公司用户</option>\n" +
+                                    " </select>\n";
                                 }
                                 str += "<li>\n" +
                                     " <span>" + user.list[i].username + "</span>\n" +

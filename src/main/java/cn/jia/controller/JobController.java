@@ -31,7 +31,7 @@ public class JobController {
     @Autowired
 	private JobService jobService;
 
- 	@RequiresRoles("admin")
+ 	@RequiresRoles("system")
  	@PostMapping("/add")
 	@ResponseBody
  	public ServerResponse add(JobDTO dto) {
@@ -45,7 +45,7 @@ public class JobController {
  		return ServerResponse.buildSuccessMsg("添加成功");
  	}
 
- 	@RequiresRoles("admin")
+ 	@RequiresRoles("system")
  	@DeleteMapping("/delete/{id}")
 	@ResponseBody
  	public ServerResponse delete(@PathVariable("id") Integer id) {
@@ -58,7 +58,7 @@ public class JobController {
 		return ServerResponse.buildSuccessMsg("删除成功");
  	}
 
- 	@RequiresRoles("admin")
+ 	@RequiresRoles("system")
  	@PostMapping("/update")
 	@ResponseBody
  	public ServerResponse update(JobDTO dto) {
@@ -75,7 +75,7 @@ public class JobController {
 
 	@GetMapping("/getById/{id}")
 	@ResponseBody
-	@RequiresRoles("admin")
+	@RequiresRoles("system")
 	public ServerResponse findById(@PathVariable("id") String id, HttpSession session){
 		String username =(String) session.getAttribute("username");
 		if (StringUtils.isEmpty(username)){
@@ -84,7 +84,7 @@ public class JobController {
 		return ServerResponse.buildSuccessData(jobMapper.selectByPrimaryKey(id));
 	}
 
-	@RequiresRoles("admin")
+	@RequiresRoles("system")
 	@GetMapping("/manager")
 	public String show(Model model) {
 		model.addAttribute("job", jobService.selectBySearch("", 1, 5));

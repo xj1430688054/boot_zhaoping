@@ -48,7 +48,7 @@ public class ResumeController {
     }
 
     /*------------------------管理员----------------------------*/
-    @RequiresRoles("admin")
+    @RequiresRoles("system")
     @GetMapping("/manager")
     public String resume(Model model,
                          @RequestParam(value = "pageIndex", defaultValue = "1", required = false) int pageIndex,
@@ -60,7 +60,7 @@ public class ResumeController {
     }
 
     //判断是在线投递还是附件邮递
-    @RequiresRoles("admin")
+    @RequiresRoles("system")
     @GetMapping("/manager/look")
     @ResponseBody
     public ServerResponse look(@RequestParam(value = "userId") int userId,
@@ -69,14 +69,14 @@ public class ResumeController {
         return resumeService.judge(userId,pName);
     }
 
-    @RequiresRoles("admin")
+    @RequiresRoles("system")
     @GetMapping("/manager/show")
     public String show(Model model, @RequestParam(value = "userId") int userId) {
         ServerResponse serverResponse = resumeService.show(userId);
         model.addAttribute("resume", (ResumeDto) serverResponse.getData());
         return "manage/resume";
     }
-    @RequiresRoles("admin")
+    @RequiresRoles("system")
     @GetMapping("/manager/page")
     @ResponseBody
     public ServerResponse page(@RequestParam(value = "pageIndex", defaultValue = "1", required = false) int pageIndex,
@@ -86,7 +86,7 @@ public class ResumeController {
     }
 
     //查询简历
-    @RequiresRoles("admin")
+    @RequiresRoles("system")
     @PostMapping("/manager/queryResume")
     @ResponseBody
     public ServerResponse query(@RequestParam String position,
@@ -96,7 +96,7 @@ public class ResumeController {
     }
 
     //删除简历
-    @RequiresRoles("admin")
+    @RequiresRoles("system")
     @DeleteMapping("/manager/delete/{id}")
     @ResponseBody
     public ServerResponse delete(@PathVariable int id){

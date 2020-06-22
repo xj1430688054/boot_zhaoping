@@ -28,7 +28,7 @@ public class DepartmentController {
     private DepartmentService departmentService;
 
 	// 展现简历
-	@RequiresRoles("admin")
+	@RequiresRoles("system")
 	@PostMapping("/add")
     @ResponseBody
 	public ServerResponse add(DepartmentDTO dto) {
@@ -36,13 +36,13 @@ public class DepartmentController {
 			dto.setCreateTime(new Date());
 			departmentMapper.insertSelective(dto);
 		} catch (Exception e) {
-			return ServerResponse.buildErrorMsg("添加部门失败！");
+			return ServerResponse.buildErrorMsg("添加公司失败！");
 		}
-		return ServerResponse.buildSuccessMsg("添加部门成功！");
+		return ServerResponse.buildSuccessMsg("添加公司成功！");
 	}
 
 	// 展现题库
-	@RequiresRoles("admin")
+	@RequiresRoles("system")
 	@DeleteMapping("/delete/{id}")
     @ResponseBody
 	public ServerResponse delete(@PathVariable("id") String id,HttpSession session) {
@@ -58,7 +58,7 @@ public class DepartmentController {
 		return ServerResponse.buildSuccessMsg("删除成功！");
 	}
 
-	@RequiresRoles("admin")
+	@RequiresRoles("system")
     @ResponseBody
 	@PostMapping("/update")
 	public ServerResponse update(DepartmentDTO dto) {
@@ -72,7 +72,7 @@ public class DepartmentController {
 
     @GetMapping("/getById/{id}")
     @ResponseBody
-    @RequiresRoles("admin")
+    @RequiresRoles("system")
     public ServerResponse findById(@PathVariable String id, HttpSession session){
         String username =(String) session.getAttribute("username");
         if (StringUtils.isEmpty(username)){
@@ -81,7 +81,7 @@ public class DepartmentController {
         return ServerResponse.buildSuccessData(departmentMapper.selectByPrimaryKey(id));
     }
 
-    @RequiresRoles("admin")
+    @RequiresRoles("system")
     @GetMapping("/manager")
     public String show(Model model) {
         model.addAttribute("department", departmentService.selectBySearch("", 1, 5));

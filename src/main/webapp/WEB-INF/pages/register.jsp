@@ -7,7 +7,7 @@
 <html>
 	<head>
 		<meta charset="utf-8" />
-		<title>华仁通电力科技有限公司招聘筛选</title>	
+		<title>招聘精选</title>	
 		<link rel="stylesheet" href="${contextPath}/static/css/register.css" />
 		<link rel="stylesheet" href="${contextPath}/static/css/bootstrap.css">
 		<script type="text/javascript" src="${contextPath}/static/js/jquery-1.11.3.js" ></script>
@@ -62,7 +62,7 @@
 
 	    <footer>
 	    	<div id="desc">
-       		  <p style="padding-left: 600px;">版权所有@EdenJia</p>
+       		  <p style="padding-left: 600px;"></p>
             </div>
 	    </footer>
 		<script type="text/javascript" src="${contextPath}/static/js/main.js"></script>

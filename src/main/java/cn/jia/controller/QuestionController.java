@@ -78,7 +78,7 @@ public class QuestionController {
     /*-------------------------管理员---------------------------------*/
 
     //展现页面
-    @RequiresRoles("admin")
+    @RequiresRoles("system")
     @GetMapping("/manager")
     public String manager(Model model,
                           @RequestParam(value = "pageIndex",defaultValue = "1",required = false)int pageIndex,
@@ -97,7 +97,7 @@ public class QuestionController {
     }*/
 
     //管理员
-    @RequiresRoles("admin")
+    @RequiresRoles("system")
     @PostMapping("/add")
     @ResponseBody
     public ServerResponse add(Question question,HttpSession session){
@@ -110,7 +110,7 @@ public class QuestionController {
 
     @GetMapping("/getById/{id}")
     @ResponseBody
-    @RequiresRoles("admin")
+    @RequiresRoles("system")
     public ServerResponse findById(@PathVariable(value = "id") int id,HttpSession session){
         String username = (String) session.getAttribute("username");
         if (StringUtils.isEmpty(username)){
@@ -119,7 +119,7 @@ public class QuestionController {
         return questionService.findById(id);
     }
 
-    @RequiresRoles("admin")
+    @RequiresRoles("system")
     @PostMapping("/update")
     @ResponseBody
     public ServerResponse update(Question question,HttpSession session){
@@ -130,7 +130,7 @@ public class QuestionController {
         return questionService.update(question);
     }
 
-    @RequiresRoles("admin")
+    @RequiresRoles("system")
     @RequestMapping("/findByType")
     @ResponseBody
     public ServerResponse findByType(String type,HttpSession session,
@@ -143,7 +143,7 @@ public class QuestionController {
         return questionService.findByType(type,pageIndex,pageSize);
     }
 
-    @RequiresRoles("admin")
+    @RequiresRoles("system")
     @DeleteMapping("/deleteById/{id}")
     @ResponseBody
     public ServerResponse detele(@PathVariable int id,HttpSession session){

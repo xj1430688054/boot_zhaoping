@@ -58,12 +58,16 @@
 									<a href="/admin//position"><i class="icon-chevron-right sidebar-nav-indicator sidebar-nav-mini-hide"></i><i class="icon-gift sidebar-nav-icon"></i><span class="sidebar-nav-mini-hide">职位管理</span></a>
 
 								</li>
-								<li>
-									<a href="/admin/user" ><i class="icon-chevron-right sidebar-nav-indicator sidebar-nav-mini-hide"></i><i class="icon-gift sidebar-nav-icon"></i><span class="sidebar-nav-mini-hide">用户管理</span></a>
-								</li>
+								<shiro:authenticated>
+	                                <shiro:hasRole name="admin">
+										<li>
+											<a href="/admin/user" ><i class="icon-chevron-right sidebar-nav-indicator sidebar-nav-mini-hide"></i><i class="icon-gift sidebar-nav-icon"></i><span class="sidebar-nav-mini-hide">用户管理</span></a>
+										</li>
+									</shiro:hasRole>
+								</shiro:authenticated>
 								<li>
 									<a href="/admin/department" ><i
-											class="icon-chevron-right sidebar-nav-indicator sidebar-nav-mini-hide"></i><i class="icon-gift sidebar-nav-icon"></i><span class="sidebar-nav-mini-hide">部门管理</span></a>
+											class="icon-chevron-right sidebar-nav-indicator sidebar-nav-mini-hide"></i><i class="icon-gift sidebar-nav-icon"></i><span class="sidebar-nav-mini-hide">公司管理</span></a>
 
 								</li>
 								<li>
@@ -127,7 +131,7 @@
 
 								<div class="form-group">
 									<input type="text" class="form-control" id="exampleInputName2"
-										   placeholder="输入相应的部门名称">
+										   placeholder="输入相应的公司名称">
 								</div>
 
 								<a  href="javaScript:void(0);" class="btn btn-primary positionQuery">查询</a>
@@ -159,13 +163,13 @@
 		    <div class="modal-content">
 		      <div class="modal-header">
 		        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-		        <h4 class="modal-title" id="myModalAdd">新增部门</h4>
+		        <h4 class="modal-title" id="myModalAdd">新增公司</h4>
 		      </div>
 		      <div class="modal-body">
 		        <form>
 					  <div class="form-group">
-					    <label for="question">部门名称：</label>
-					    <input type="text" class="form-control" id="addPName" placeholder="输入部门名称">
+					    <label for="question">公司名称：</label>
+					    <input type="text" class="form-control" id="addPName" placeholder="输入公司名称">
 					  </div>
 				</form>
 		      </div>
@@ -185,12 +189,12 @@
 		    <div class="modal-content">
 		      <div class="modal-header">
 		        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-		        <h4 class="modal-title" id="myModalLabel">部门详情</h4>
+		        <h4 class="modal-title" id="myModalLabel">公司详情</h4>
 		      </div>
 		      <div class="modal-body">
 		        <form>
 					  <div class="form-group">
-					    <label for="question">部门名称：</label>
+					    <label for="question">公司名称：</label>
 					    <input type="text" class="form-control" id="updatePName">
 					  </div>
 				</form>
